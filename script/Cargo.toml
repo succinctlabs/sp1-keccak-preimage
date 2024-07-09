@@ -1,0 +1,12 @@
+[package]
+name = "keccak-script"
+edition = "2021"
+version = "0.1.0"
+
+[dependencies]
+rand = "0.8.5"
+sha3 = "0.10.8"
+sp1-sdk = { git = "https://github.com/succinctlabs/sp1.git", tag = "v1.0.5-testnet" }
+
+[build-dependencies]
+sp1-helper = { git = "https://github.com/succinctlabs/sp1.git", tag = "v1.0.5-testnet" }

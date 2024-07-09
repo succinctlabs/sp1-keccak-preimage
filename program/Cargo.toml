@@ -1,0 +1,11 @@
+[package]
+name = "keccak-program"
+edition = "2021"
+version = "0.1.0"
+
+[dependencies]
+sp1-zkvm = { git = "https://github.com/succinctlabs/sp1.git", branch = "main" }
+tiny-keccak = { version = "2.0.2", features = ["keccak"] }
+
+[patch.crates-io]
+tiny-keccak = { git = "https://github.com/sp1-patches/tiny-keccak", branch = "patch-v2.0.2" }
