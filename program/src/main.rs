@@ -3,7 +3,7 @@
 #![no_main]
 sp1_zkvm::entrypoint!(main);
 
-use tiny_keccak::{Hasher, Keccak};
+use sha3::{Digest, Keccak256};
 
 pub fn main() {
     let preimage = sp1_zkvm::io::read_vec();
@@ -11,9 +11,9 @@ pub fn main() {
     let offset: usize = offset_u32.try_into().unwrap();
 
     let mut hash = [0u8; 32];
-    let mut keccak256 = Keccak::v256();
+    let mut keccak256 = Keccak256::new();
     keccak256.update(&preimage);
-    keccak256.finalize(&mut hash);
+    hash.copy_from_slice(&keccak256.finalize());
 
     let mut chunk = Vec::new();
     if offset < preimage.len() {
