@@ -20,7 +20,7 @@ tiny-keccak = { git = "https://github.com/sp1-patches/tiny-keccak", branch = "pa
 2. `SP1_PROVER=network SP1_PRIVATE_KEY=<your_key> RUST_LOG=info cargo run --release`
 
 Requires having a valid `SP1_PRIVATE_KEY` value. For more information, see the [prover
-network](https://docs.succinct.xyz/prover-network/setup.html) docs.
+network](https://docs.succinct.xyz/docs/generating-proofs/prover-network/key-setup) docs.
 
 ## Generate a proof locally
 
